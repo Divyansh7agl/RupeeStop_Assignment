@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Poppins:wght@400;600;700;800&display=swap');
+
+:root {
+  /* Rupeestop Brand Colors - Dark Theme Translation */
+  --color-primary: #004d43; /* Deep Teal from their brand */
+  --color-primary-light: #0f766e; /* Lighter teal for borders/accents */
+  --color-primary-dark: #00332d; /* Even darker for backgrounds */
+  --color-accent-orange: #fb923c; /* Action orange */
+  --color-accent-orange-hover: #ea580c;
+  --color-accent-lime: #00ee67; /* Bright lime for highlights/success */
+  --color-accent-lime-muted: rgba(0, 238, 103, 0.1);
+  
+  /* Backgrounds */
+  --color-bg-base: #021a17; /* Very dark teal for the app background */
+  --color-bg-surface: #062b26; /* Dark teal for cards */
+  --color-bg-surface-hover: #0a3a34; /* Slightly lighter for hover states */
+  --color-bg-input: #04211d; /* For textareas and inputs */
+  
+  /* Borders */
+  --color-border: #0f4f46; /* Subtle teal border */
+  --color-border-active: #14b8a6; /* Active border */
+  
+  /* Text */
+  --color-text-main: #f0fdfa; /* Off-white with a hint of teal */
+  --color-text-muted: #99f6e4; /* Muted teal for secondary text */
+  --color-text-dark: #0f172a; /* Dark text for light backgrounds (like on the lime accent) */
+  
+  /* Typography */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Lato', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-main);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Card Style (Clean flat cards with subtle teal border) */
+.rs-card {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.rs-card-header {
+  border-bottom: 1px solid var(--color-border);
+  padding: 16px 24px;
+}
+
+.rs-card-body {
+  padding: 24px;
+}
+
+/* Buttons */
+.rs-btn-primary {
+  background-color: var(--color-accent-orange);
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.rs-btn-primary:hover:not(:disabled) {
+  background-color: var(--color-accent-orange-hover);
+}
+
+.rs-btn-primary:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.rs-btn-primary:disabled {
+  background-color: var(--color-bg-surface-hover);
+  color: var(--color-border);
+  cursor: not-allowed;
+}
+
+.rs-btn-outline {
+  background-color: transparent;
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-weight: 500;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 6px 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.rs-btn-outline:hover {
+  border-color: var(--color-border-active);
+  color: var(--color-text-main);
+}
+
+/* Tab Navigation */
+.rs-tabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 24px;
+}
+
+.rs-tab {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 12px 24px;
+  color: var(--color-text-muted);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: -1px;
+}
+
+.rs-tab:hover {
+  color: var(--color-text-main);
+}
+
+.rs-tab.active {
+  color: var(--color-accent-lime);
+  border-bottom-color: var(--color-accent-lime);
+}
+
+/* Status Badges */
+.rs-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+}
+
+.rs-badge-lime {
+  background-color: var(--color-accent-lime-muted);
+  color: var(--color-accent-lime);
+  border: 1px solid var(--color-accent-lime);
+}
+
+.rs-badge-teal {
+  background-color: var(--color-bg-surface-hover);
+  color: var(--color-text-main);
+  border: 1px solid var(--color-border-active);
+}
